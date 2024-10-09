@@ -110,9 +110,12 @@ SELECT *
   WHERE salesman_id = (SELECT salesman_id
                          FROM salesman
                          WHERE name = 'Paul Adam');
+/*
+    Get all of the orders from the saleman whose name is Paul Adam
+*/
 
 
-/* 2. Explain in plain English in one sentence what is the output of the folloiwng block of SQL commands: *.'
+/* 2. Explain in plain English in one sentence what is the output of the folloiwng block of SQL commands: *.'*/
 
 SELECT *
   FROM orders
@@ -120,7 +123,9 @@ SELECT *
                          FROM salesman
                          WHERE city = 'London');
 
-
+/*
+    Get all of the orders from the salemen who are located in london
+*/
 
 
 /* 3 (bonus). Explain in plain English in one sentence what is the output of the folloiwng block of SQL commands: */
@@ -132,4 +137,10 @@ SELECT ord_date,
   HAVING SUM(purch_amt) > (SELECT MAX(purch_amt) + 1000
                              FROM orders b
                              WHERE a.ord_date = b.ord_date);
+
+/*
+    finds the sum of the amounts from the orders table, grouped by date, 
+    and eliminates all dates where the sum was not at least 1000.00 
+    above the maximum order amount for that date. 
+*/
 
