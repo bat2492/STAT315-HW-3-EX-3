@@ -274,7 +274,11 @@ SELECT E.first_name,
 
 /* 2. Write a query in SQL to display the first and last name, department, city, and state province for each employee. */
 
-SELECT E.first_name, E.last_name, D.department_name, L.city, L.state_province
+SELECT E.first_name, 
+       E.last_name, 
+       D.department_name, 
+       L.city, 
+       L.state_province
   FROM employees E
   INNER JOIN departments D
     ON E.department_id = D.department_id
